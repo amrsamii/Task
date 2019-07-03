@@ -32,28 +32,28 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
-            /*case R.id.menu_home:
+            case R.id.menu_home:
                 if(!(fragment instanceof HomeFragment)) {
                     fragment = new HomeFragment();
                     bottomNavigationView.getMenu().findItem(R.id.menu_home).setChecked(true);
                 }
-                break;*/
+                break;
 
             case R.id.menu_more:
                 if(!(fragment instanceof MoreFragment)) {
                     fragment = new MoreFragment();
-                   // bottomNavigationView.getMenu().findItem(R.id.menu_more).setChecked(true);
+                    bottomNavigationView.getMenu().findItem(R.id.menu_more).setChecked(true);
 
                 }
                 break;
-         /*   case R.id.menu_profile:
+            case R.id.menu_profile:
                 if(!(fragment instanceof ProfileFragment)) {
                     fragment = new ProfileFragment();
                     bottomNavigationView.getMenu().findItem(R.id.menu_profile).setChecked(true);
 
 
                 }
-                break;*/
+                break;
 
         }
         if (fragment != null)

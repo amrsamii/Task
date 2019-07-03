@@ -32,7 +32,7 @@ public class SharedPrefManager {
         editor.putInt("id",user.getId());
         editor.putString("email",user.getEmail());
         editor.putString("name",user.getName());
-        editor.putString("mobile",user.getPhone());
+        editor.putString("phone",user.getPhone());
         editor.putString("api_token",user.getApi_token());
 
         editor.apply();

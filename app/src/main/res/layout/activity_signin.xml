@@ -79,7 +79,7 @@
                             android:drawableTint="@color/colorPrimary"
                             android:drawablePadding="10dp"
                             android:hint="Email or Phone"
-                            android:textColor="#FFF"
+                            android:textColor="#000"
                             android:inputType="textEmailAddress|textAutoCorrect"
                             />
                     </com.google.android.material.textfield.TextInputLayout>
