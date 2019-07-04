@@ -34,7 +34,6 @@ public class SharedPrefManager {
         editor.putString("name",user.getName());
         editor.putString("phone",user.getPhone());
         editor.putString("api_token",user.getApi_token());
-
         editor.apply();
     }
 

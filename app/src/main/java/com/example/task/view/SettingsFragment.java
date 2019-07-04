@@ -17,13 +17,13 @@ import com.example.task.storage.SharedPrefManager;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MoreFragment extends Fragment {
+public class SettingsFragment extends Fragment {
 
     @BindView(R.id.logout_button) MaterialRippleLayout logoutButton;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_more, container, false);
+        return inflater.inflate(R.layout.fragment_settings, container, false);
     }
 
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

@@ -110,7 +110,7 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <com.balysv.materialripple.MaterialRippleLayout
-                android:id="@+id/updateButton"
+                android:id="@+id/update_button"
                 style="@style/RippleStyleGrey"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">

@@ -11,5 +11,5 @@
 
     <item android:title="Settings"
         android:id="@+id/menu_more"
-        android:icon="@drawable/ic_dehaze_black_24dp"/>
+        android:icon="@drawable/ic_settings_black_24dp"/>
 </menu>

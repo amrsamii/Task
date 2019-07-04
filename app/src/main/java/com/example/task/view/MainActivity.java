@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.example.task.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -40,8 +39,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 break;
 
             case R.id.menu_more:
-                if(!(fragment instanceof MoreFragment)) {
-                    fragment = new MoreFragment();
+                if(!(fragment instanceof SettingsFragment)) {
+                    fragment = new SettingsFragment();
                     bottomNavigationView.getMenu().findItem(R.id.menu_more).setChecked(true);
 
                 }
@@ -66,5 +65,29 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 .beginTransaction()
                 .replace(R.id.cont, fragment)
                 .commit();
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        if(fragment instanceof ProfileFragment){
+            displayFragment( new ProfileFragment());
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(fragment instanceof ProfileFragment) {
+            fragment = new HomeFragment();
+            bottomNavigationView.getMenu().findItem(R.id.menu_home).setChecked(true);
+            displayFragment(fragment);
+        }
+        else if(fragment instanceof SettingsFragment) {
+            fragment = new HomeFragment();
+            bottomNavigationView.getMenu().findItem(R.id.menu_home).setChecked(true);
+            displayFragment(fragment);
+        }
+        else
+            super.onBackPressed();
     }
 }
