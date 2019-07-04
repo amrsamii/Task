@@ -1,6 +1,7 @@
 package com.example.task.service;
 
 import com.example.task.ApiResponses.SignResponse;
+import com.example.task.ApiResponses.UpdatePhoneResponse;
 import com.example.task.model.User;
 
 import okhttp3.ResponseBody;
@@ -46,5 +47,19 @@ public interface APIClient {
             @Query("api_token") String apiToken,
             @Query("old_password") String oldPass,
             @Query("new_password") String newPass);
+
+
+    @Headers("Accept:application/json")
+    @POST("/api/v1/user/auth/request-update-phone")
+    Call<UpdatePhoneResponse> requestUpdatePhone(@Query("api_token") String apiToken,
+                                                 @Query("phone") String phone);
+
+
+
+    @Headers("Accept:application/json")
+    @PATCH("/api/v1/user/auth/update-phone")
+    Call<ResponseBody> updatePhone(@Query("api_token") String apiToken,
+                           @Query("phone") String phone,
+                           @Query("temp_phone_code") String code);
 
 }

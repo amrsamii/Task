@@ -82,9 +82,6 @@ public class UpdateProfile extends AppCompatActivity {
                     User user = response.body().getUser();
                     SharedPrefManager.getInstance(UpdateProfile.this).saveUser(user);
                     Toast.makeText(UpdateProfile.this, "Updated", Toast.LENGTH_SHORT).show();
-                   /* Intent intent = new Intent(UpdateProfile.this, MainActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(intent);*/
                    finish();
                 }else{
                     ErrorResponse apiError = ErrorUtils.parseError(response);

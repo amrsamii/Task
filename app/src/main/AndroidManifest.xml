@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.PassChangeActivity"></activity>
+        <activity android:name=".view.ResetPassActivity"></activity>
+        <activity android:name=".view.PhoneChangeActivity" />
+        <activity android:name=".view.PassChangeActivity" />
         <activity android:name=".view.UpdateProfile" />
         <activity android:name=".view.SigninActivity" />
         <activity android:name=".view.StartActivity" />

@@ -24,21 +24,49 @@
             android:text="Change Password" />
     </com.balysv.materialripple.MaterialRippleLayout>
 
-        <com.balysv.materialripple.MaterialRippleLayout
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/update_phone_button"
+        style="@style/RippleStyleGrey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <Button
             android:layout_width="match_parent"
-            android:id="@+id/logout_button"
             android:layout_height="wrap_content"
-            style="@style/RippleStyleGrey"
-            android:layout_margin="8dp">
-            <Button
-                android:textAllCaps="false"
-                android:gravity="start|center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:background="@color/transparent"
-                android:textColor="#000"
-                android:text="Logout" />
-        </com.balysv.materialripple.MaterialRippleLayout>
+            android:background="@color/transparent"
+            android:gravity="start|center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Change Phone"
+            android:textAllCaps="false"
+            android:textColor="#000" />
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="8dp"
+        android:background="#808080"/>
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/logout_button"
+        style="@style/RippleStyleGrey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:gravity="start|center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Logout"
+            android:textAllCaps="false"
+            android:textColor="#000" />
+    </com.balysv.materialripple.MaterialRippleLayout>
+
 </LinearLayout>

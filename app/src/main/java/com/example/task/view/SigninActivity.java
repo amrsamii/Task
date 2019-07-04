@@ -51,6 +51,15 @@ public class SigninActivity extends AppCompatActivity {
                 sendNetworkRequest(emailPhone,pass);
             }
         });
+
+        forgetTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SigninActivity.this,ResetPassActivity.class);
+                startActivity(intent);
+
+            }
+        });
     }
 
 

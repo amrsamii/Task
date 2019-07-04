@@ -19,8 +19,13 @@ import butterknife.ButterKnife;
 
 public class SettingsFragment extends Fragment {
 
-    @BindView(R.id.logout_button) MaterialRippleLayout logoutButton;
-    @BindView(R.id.change_pass_button) MaterialRippleLayout changePassButton;
+    @BindView(R.id.logout_button)
+    MaterialRippleLayout logoutButton;
+    @BindView(R.id.change_pass_button)
+    MaterialRippleLayout changePassButton;
+    @BindView(R.id.update_phone_button)
+    MaterialRippleLayout updatePhoneButton;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -31,7 +36,6 @@ public class SettingsFragment extends Fragment {
 
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
-
 
 
         changePassButton.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +54,16 @@ public class SettingsFragment extends Fragment {
                 Intent intent = new Intent(getContext(), StartActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
+            }
+        });
+
+        updatePhoneButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), PhoneChangeActivity.class);
+                startActivity(intent);
+
+
             }
         });
 
