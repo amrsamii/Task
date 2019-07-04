@@ -3,6 +3,7 @@ package com.example.task.service;
 import com.example.task.ApiResponses.SignResponse;
 import com.example.task.model.User;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Headers;
@@ -36,4 +37,14 @@ public interface APIClient {
             @Query("name") String name,
             @Query("email") String email,
             @Query("image") String imageURl);
+
+
+
+    @Headers("Accept:application/json")
+    @PATCH("/api/v1/user/auth/update-password")
+    Call<ResponseBody> changePass(
+            @Query("api_token") String apiToken,
+            @Query("old_password") String oldPass,
+            @Query("new_password") String newPass);
+
 }

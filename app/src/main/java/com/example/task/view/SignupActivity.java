@@ -14,6 +14,7 @@ import com.balysv.materialripple.MaterialRippleLayout;
 import com.example.task.ApiResponses.ErrorResponse;
 import com.example.task.ApiResponses.SignResponse;
 import com.example.task.R;
+import com.example.task.helpers.Common;
 import com.example.task.helpers.ErrorUtils;
 import com.example.task.model.Error;
 import com.example.task.model.User;
@@ -31,6 +32,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.example.task.helpers.Common.PASSWORD_PATTERN;
+
 public class SignupActivity extends AppCompatActivity {
 
     @BindView(R.id.email_edit_text) TextInputLayout emailTextInputLayout;
@@ -40,16 +43,7 @@ public class SignupActivity extends AppCompatActivity {
     @BindView(R.id.signup_button) MaterialRippleLayout signupButton;
 
     private AlertDialog dialog;
-    private static final Pattern PASSWORD_PATTERN =
-            Pattern.compile("^" +
-                    "(?=.*[0-9])" +         //at least 1 digit
-                    "(?=.*[a-z])" +         //at least 1 lower case letter
-                    "(?=.*[A-Z])" +         //at least 1 upper case letter
-                    //"(?=.*[a-zA-Z])" +      //any letter
-                    //  "(?=.*[@#$%^&+=])" +    //at least 1 special character
-                    "(?=\\S+$)" +           //no white spaces
-                    ".{6,}" +               //at least 6 characters  // after comma is upper limit e.g 20 char
-                    "$");
+
 
 
     @Override
@@ -136,8 +130,8 @@ public class SignupActivity extends AppCompatActivity {
         if (TextUtils.isEmpty(password)) {
             passTextInputLayout.setError("Field can't be empty");
             return false;
-        } else if (!PASSWORD_PATTERN.matcher(password).matches()) {
-            passTextInputLayout.setError("Password must be 6 charachters and include small and capital letters");
+        } else if (!Common.PASSWORD_PATTERN.matcher(password).matches()) {
+            passTextInputLayout.setError("Password must be 6 characters and include small and capital letters");
             return false;
         } else {
             passTextInputLayout.setError(null);

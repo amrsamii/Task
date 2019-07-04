@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.balysv.materialripple.MaterialRippleLayout;
@@ -30,7 +31,7 @@ public class SigninActivity extends AppCompatActivity {
     @BindView(R.id.email_edit_text) TextInputLayout emailTextInputLayout;
     @BindView(R.id.pass_edit_text) TextInputLayout passTextInputLayout;
     @BindView(R.id.signin_button) MaterialRippleLayout signinButton;
-
+    @BindView(R.id.forget_tv) TextView forgetTextView;
     private AlertDialog dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

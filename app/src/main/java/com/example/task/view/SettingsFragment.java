@@ -20,6 +20,7 @@ import butterknife.ButterKnife;
 public class SettingsFragment extends Fragment {
 
     @BindView(R.id.logout_button) MaterialRippleLayout logoutButton;
+    @BindView(R.id.change_pass_button) MaterialRippleLayout changePassButton;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -30,6 +31,16 @@ public class SettingsFragment extends Fragment {
 
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
+
+
+
+        changePassButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), PassChangeActivity.class);
+                startActivity(intent);
+            }
+        });
 
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
