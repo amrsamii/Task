@@ -81,7 +81,7 @@ public class PassChangeActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 dialog.dismiss();
-                Toast.makeText(PassChangeActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(PassChangeActivity.this, "Check internet connection", Toast.LENGTH_SHORT).show();
 
             }
         });

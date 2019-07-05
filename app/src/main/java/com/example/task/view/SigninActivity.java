@@ -55,7 +55,7 @@ public class SigninActivity extends AppCompatActivity {
         forgetTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SigninActivity.this,ResetPassActivity.class);
+                Intent intent = new Intent(SigninActivity.this, ResetPassRequestActivity.class);
                 startActivity(intent);
 
             }
@@ -92,7 +92,7 @@ public class SigninActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<SignResponse> call, Throwable t) {
-                Toast.makeText(SigninActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(SigninActivity.this, "Check internet connection", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
             }
         });

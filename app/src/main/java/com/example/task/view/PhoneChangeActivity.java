@@ -30,9 +30,12 @@ public class PhoneChangeActivity extends AppCompatActivity {
 
     @BindView(R.id.phone_edit_text)
     TextInputLayout phoneLayout;
-    @BindView(R.id.save_button)
-    MaterialRippleLayout saveButton;
-    User user = SharedPrefManager.getInstance(this).getUser();
+    @BindView(R.id.save_button) MaterialRippleLayout saveButton;
+
+
+    SharedPrefManager sharedPrefManager = SharedPrefManager.getInstance(this);
+    User user = sharedPrefManager.getUser();
+
     private AlertDialog dialog;
 
     @Override
@@ -77,7 +80,7 @@ public class PhoneChangeActivity extends AppCompatActivity {
                             if (response.isSuccessful()){
                                 Toast.makeText(PhoneChangeActivity.this, "Phone updated successfully", Toast.LENGTH_SHORT).show();
                                 user.setPhone(phone);
-                                SharedPrefManager.getInstance(getApplicationContext()).saveUser(user);
+                               sharedPrefManager.saveUser(user);
 
                                 finish();
                             }else{
@@ -88,7 +91,7 @@ public class PhoneChangeActivity extends AppCompatActivity {
 
                         @Override
                         public void onFailure(Call<ResponseBody> call, Throwable t) {
-                            Toast.makeText(PhoneChangeActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(PhoneChangeActivity.this, "Check internet connection", Toast.LENGTH_SHORT).show();
                         }
                     });
 
@@ -101,7 +104,7 @@ public class PhoneChangeActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<UpdatePhoneResponse> call, Throwable t) {
                 dialog.dismiss();
-                Toast.makeText(PhoneChangeActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(PhoneChangeActivity.this, "Check internet connection", Toast.LENGTH_SHORT).show();
             }
         });
 

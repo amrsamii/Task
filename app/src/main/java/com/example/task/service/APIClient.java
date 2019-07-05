@@ -1,15 +1,19 @@
 package com.example.task.service;
 
+import com.example.task.ApiResponses.ResetPassResponse;
 import com.example.task.ApiResponses.SignResponse;
 import com.example.task.ApiResponses.UpdatePhoneResponse;
 import com.example.task.model.User;
 
+import okhttp3.MultipartBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Headers;
+import retrofit2.http.Multipart;
 import retrofit2.http.PATCH;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Query;
 
 public interface APIClient {
@@ -61,5 +65,28 @@ public interface APIClient {
     Call<ResponseBody> updatePhone(@Query("api_token") String apiToken,
                            @Query("phone") String phone,
                            @Query("temp_phone_code") String code);
+
+
+    @Headers("Accept:application/json")
+    @POST("/api/v1/user/auth/password/email")
+    Call<ResetPassResponse> requestPassReset(@Query("name") String name,
+                                             @Query("reset_method") String method);
+
+    @Headers("Accept:application/json")
+    @PATCH("/api/v1/user/auth/password/reset")
+    Call<SignResponse> resetPass(
+            @Query("reset_password_code") String code,
+            @Query("name") String name,
+            @Query("password") String pass,
+            @Query("reset_method") String resetMethod);
+
+
+
+    @Multipart
+    @Headers("Accept:application/json")
+    @POST("/api/v1/user/auth/file/upload")
+    Call<ResponseBody> uploadFile(
+            @Part MultipartBody.Part image
+            );
 
 }

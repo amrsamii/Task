@@ -107,7 +107,7 @@ public class SignupActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<SignResponse> call, Throwable t) {
-                Toast.makeText(SignupActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignupActivity.this, "Check internet connection", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
             }
         });

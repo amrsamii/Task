@@ -69,4 +69,8 @@ dependencies {
 
     //Dialog
     implementation 'com.github.d-max:spots-dialog:1.1@aar'
+
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    api 'com.theartofdev.edmodo:android-image-cropper:2.6.+'
 }

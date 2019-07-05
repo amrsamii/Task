@@ -34,6 +34,7 @@ public class SharedPrefManager {
         editor.putString("name",user.getName());
         editor.putString("phone",user.getPhone());
         editor.putString("api_token",user.getApi_token());
+        editor.putString("reset_password_code",user.getReset_password_code());
         editor.apply();
     }
 
@@ -44,7 +45,8 @@ public class SharedPrefManager {
                 sharedPreferences.getString("name",null),
                 sharedPreferences.getString("phone",null),
                 sharedPreferences.getString("email",null),
-                sharedPreferences.getString("api_token",null)
+                sharedPreferences.getString("api_token",null),
+                sharedPreferences.getString("reset_password_code",null)
 
         );
     }
