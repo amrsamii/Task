@@ -30,7 +30,7 @@
             android:name=".activities.SigninActivity"
             android:configChanges="screenSize|orientation" />
         <activity
-            android:name=".view.StartActivity"
+            android:name=".activities.StartActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".activities.SplashActivity"
