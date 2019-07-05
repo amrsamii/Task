@@ -26,8 +26,6 @@ android {
 
 dependencies {
 
-    def lifecycle_version = "2.0.0"
-    def room_version = "2.1.0"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.2'
@@ -37,13 +35,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
 
-    //Lifecycle components
-    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
-    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
 
-    //Room components
-    implementation "androidx.room:room-runtime:$room_version"
-    annotationProcessor "androidx.room:room-compiler:$room_version"
 
     //Retrofit and GSON
     implementation 'com.squareup.retrofit2:retrofit:2.6.0'
@@ -70,7 +62,7 @@ dependencies {
     //Dialog
     implementation 'com.github.d-max:spots-dialog:1.1@aar'
 
-
+    //handle user image
     implementation 'com.squareup.picasso:picasso:2.71828'
     api 'com.theartofdev.edmodo:android-image-cropper:2.6.+'
 }
