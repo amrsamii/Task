@@ -1,4 +1,7 @@
-# This is Application where user can register in and go to update his profile
-The user can login via registered credentials later from login page
-The user will able to update his credentials and data
-password will be optional in update profile because maybe user wants to update his name but he doesn't want to change his password
+# Task Application
+## Features
+The user can sign up and sign in to the application.
+The user can update his email and name in profile.
+The user can change his password.
+The user can change his phone number.
+The user can reset his password if he forgets it by sending code to his email or phone and verify it.
