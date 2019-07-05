@@ -1,12 +1,10 @@
-package com.example.task.view;
+package com.example.task.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import com.example.task.R;
 import com.example.task.storage.SharedPrefManager;
 
 public class SplashActivity extends AppCompatActivity {

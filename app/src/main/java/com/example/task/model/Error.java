@@ -1,6 +1,6 @@
 package com.example.task.model;
 
-public class Error {
+public class Error implements IError{
 
 
     String name;

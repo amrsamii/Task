@@ -13,27 +13,27 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.ResetPassActivity"
+        <activity android:name=".activities.ResetPassActivity"
             android:configChanges="screenSize|orientation"/>
-        <activity android:name=".view.ResetPassRequestActivity"
+        <activity android:name=".activities.ResetPassRequestActivity"
             android:configChanges="screenSize|orientation"/>
         <activity
-            android:name=".view.PhoneChangeActivity"
+            android:name=".activities.PhoneChangeActivity"
             android:configChanges="screenSize|orientation" />
         <activity
-            android:name=".view.PassChangeActivity"
+            android:name=".activities.PassChangeActivity"
             android:configChanges="screenSize|orientation" />
         <activity
-            android:name=".view.UpdateProfile"
+            android:name=".activities.UpdateProfileActivity"
             android:configChanges="screenSize|orientation" />
         <activity
-            android:name=".view.SigninActivity"
+            android:name=".activities.SigninActivity"
             android:configChanges="screenSize|orientation" />
         <activity
-            android:name=".view.StartActivity"
+            android:name=".activities.StartActivity"
             android:configChanges="screenSize|orientation" />
         <activity
-            android:name=".view.SplashActivity"
+            android:name=".activities.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/splashScreen">
             <intent-filter>
@@ -43,10 +43,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.SignupActivity"
+            android:name=".activities.SignupActivity"
             android:configChanges="screenSize|orientation" />
         <activity
-            android:name=".view.MainActivity"
+            android:name=".activities.MainActivity"
             android:configChanges="screenSize|orientation"
             />
 

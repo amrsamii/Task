@@ -1,4 +1,4 @@
-package com.example.task.view;
+package com.example.task.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.task.R;
+import com.example.task.fragments.HomeFragment;
+import com.example.task.fragments.ProfileFragment;
+import com.example.task.fragments.SettingsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import butterknife.BindView;

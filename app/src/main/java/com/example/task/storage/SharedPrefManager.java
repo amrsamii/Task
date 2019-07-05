@@ -3,6 +3,7 @@ package com.example.task.storage;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.task.model.IUSer;
 import com.example.task.model.User;
 
 public class SharedPrefManager {
@@ -26,7 +27,7 @@ public class SharedPrefManager {
     }
 
 
-    public void saveUser(User user){
+    public void saveUser(IUSer user){
         SharedPreferences sharedPreferences = mContext.getSharedPreferences(MY_SHARED_PREF,Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt("id",user.getId());
@@ -38,7 +39,7 @@ public class SharedPrefManager {
         editor.apply();
     }
 
-    public User getUser(){
+    public IUSer getUser(){
         SharedPreferences sharedPreferences = mContext.getSharedPreferences(MY_SHARED_PREF,Context.MODE_PRIVATE);
         return new User(
                 sharedPreferences.getInt("id",-1),

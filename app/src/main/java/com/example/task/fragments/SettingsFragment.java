@@ -1,4 +1,4 @@
-package com.example.task.view;
+package com.example.task.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,10 @@ import androidx.fragment.app.Fragment;
 
 import com.balysv.materialripple.MaterialRippleLayout;
 import com.example.task.R;
+import com.example.task.activities.PassChangeActivity;
+import com.example.task.activities.PhoneChangeActivity;
 import com.example.task.storage.SharedPrefManager;
+import com.example.task.activities.StartActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

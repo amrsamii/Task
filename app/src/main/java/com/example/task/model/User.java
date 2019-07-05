@@ -1,6 +1,10 @@
 package com.example.task.model;
 
-public class User {
+import android.content.Context;
+
+import com.example.task.storage.SharedPrefManager;
+
+public class User implements IUSer {
 
     private int id;
     private  String name;
@@ -56,4 +60,8 @@ public class User {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+
+
+
 }

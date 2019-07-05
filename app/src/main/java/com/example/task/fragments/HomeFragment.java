@@ -1,4 +1,4 @@
-package com.example.task.view;
+package com.example.task.fragments;
 
 import androidx.fragment.app.Fragment;
 
