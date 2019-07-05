@@ -26,7 +26,7 @@
             android:drawablePadding="10dp"
             android:drawableTint="@color/colorPrimary"
             android:hint="Phone Number"
-            android:inputType="textEmailAddress|textAutoCorrect" />
+            android:inputType="phone|textAutoCorrect" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.cardview.widget.CardView
