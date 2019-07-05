@@ -6,6 +6,7 @@ import com.example.task.ApiResponses.UpdatePhoneResponse;
 import com.example.task.model.User;
 
 import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -86,7 +87,6 @@ public interface APIClient {
     @Headers("Accept:application/json")
     @POST("/api/v1/user/auth/file/upload")
     Call<ResponseBody> uploadFile(
-            @Part MultipartBody.Part image
-            );
+            @Part MultipartBody.Part image);
 
 }

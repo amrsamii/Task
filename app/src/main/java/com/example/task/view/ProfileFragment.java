@@ -18,14 +18,24 @@ import com.example.task.storage.SharedPrefManager;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileFragment extends Fragment {
 
 
-    @BindView(R.id.name_tv) TextView nameTextView;
-    @BindView(R.id.email_tv) TextView emailTextView;
-    @BindView(R.id.mobile_tv) TextView mobileTextView;
-    @BindView(R.id.update_button) MaterialRippleLayout updateButton;
+    @BindView(R.id.name_tv)
+    TextView nameTextView;
+    @BindView(R.id.email_tv)
+    TextView emailTextView;
+    @BindView(R.id.mobile_tv)
+    TextView mobileTextView;
+    @BindView(R.id.profile_image)
+    CircleImageView profileImage;
+    @BindView(R.id.update_button)
+    MaterialRippleLayout updateButton;
+
+
+    private static final int PICKER_REQUEST_CODE = 431;
 
     @Nullable
     @Override
@@ -45,9 +55,52 @@ public class ProfileFragment extends Fragment {
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(),UpdateProfile.class));
+                startActivity(new Intent(getContext(), UpdateProfile.class));
             }
         });
 
+        //tried to uploag user image after choosing it but response gives internal server error
+
+    /*    profileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/*");
+                startActivityForResult(Intent.createChooser(intent, "complete my action using"), PICKER_REQUEST_CODE);
+
+            }
+        });*/
+
     }
+/*
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == PICKER_REQUEST_CODE && resultCode == RESULT_OK) {
+            Uri imageUri = data.getData();
+            File originalFile = FileUtils.getFile(getContext(),imageUri);
+            RequestBody filePart = RequestBody.create(
+                    MediaType.parse("image/*"),
+                    originalFile);
+
+            MultipartBody.Part file = MultipartBody.Part.createFormData("file",originalFile.getName(),filePart);
+            APIClient client = ServiceGenerator.createService(APIClient.class);
+            Call<ResponseBody> call = client.uploadFile(file);
+
+            call.enqueue(new Callback<ResponseBody>() {
+                @Override
+                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                    Toast.makeText(getContext(), response.message(), Toast.LENGTH_SHORT).show();
+
+                }
+
+                @Override
+                public void onFailure(Call<ResponseBody> call, Throwable t) {
+                    Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+
+                }
+            });
+
+        }
+
+    }*/
 }

@@ -13,8 +13,10 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.ResetPassActivity"></activity>
-        <activity android:name=".view.ResetPassRequestActivity" />
+        <activity android:name=".view.ResetPassActivity"
+            android:configChanges="screenSize|orientation"/>
+        <activity android:name=".view.ResetPassRequestActivity"
+            android:configChanges="screenSize|orientation"/>
         <activity
             android:name=".view.PhoneChangeActivity"
             android:configChanges="screenSize|orientation" />
@@ -45,7 +47,8 @@
             android:configChanges="screenSize|orientation" />
         <activity
             android:name=".view.MainActivity"
-            android:configChanges="screenSize|orientation" />
+            android:configChanges="screenSize|orientation"
+            />
 
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
