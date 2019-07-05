@@ -30,8 +30,8 @@
             android:name=".activities.SigninActivity"
             android:configChanges="screenSize|orientation" />
         <activity
-            android:name=".activities.StartActivity"
-            android:configChanges="screenSize|orientation" />
+            android:name=".view.StartActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.SplashActivity"
             android:screenOrientation="portrait"
@@ -50,9 +50,7 @@
             android:configChanges="screenSize|orientation"
             />
 
-        <activity
-            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-            android:theme="@style/Base.Theme.AppCompat" />
+
     </application>
 
 </manifest>
