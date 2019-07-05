@@ -28,7 +28,7 @@
             android:drawablePadding="10dp"
             android:hint="Code"
             android:textColorHint="#808080"
-            android:inputType="textPersonName|textAutoCorrect" />
+            android:inputType="number|textAutoCorrect" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
